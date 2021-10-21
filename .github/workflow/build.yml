@@ -1,0 +1,27 @@
+name: build
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/fedora:latest
+      # Fix SELinux for the built OSTree: https://github.com/coreos/rpm-ostree/issues/1943
+      options: --privileged --security-opt label:disable
+    steps:
+      - name: Install dependencies
+        run: dnf install -y rpm-ostree selinux-policy selinux-policy-targeted policycoreutils
+
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Build OSTree
+        run: ./compose.sh
+      
+      # sync
+      - name: Sync tree to backblaze
+        uses: jakejarvis/backblaze-b2-action@master
+        env:
+          SOURCE_DIR: '/var/tmp/repo'
+          B2_BUCKET: ${{ secrets.B2_BUCKET }}
+          B2_APPKEY_ID: ${{ secrets.B2_APPKEY_ID }}
+          B2_APPKEY: ${{ secrets.B2_APPKEY }}
