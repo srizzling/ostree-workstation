@@ -1,0 +1,5 @@
+[qtile]
+name=qtile
+baseurl=https://raw.githubusercontent.com/david35mm/david35mm-rpm/main/
+enabled=1
+gpgcheck=0

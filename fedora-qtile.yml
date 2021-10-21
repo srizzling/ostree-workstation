@@ -1,0 +1,31 @@
+include: upstream/fedora-common-ostree.yaml
+
+#ref: fedora/33/${basearch}/sway
+rojig:
+  name: fedora-qtile
+  summary: "Fedora Silverblue Qtile"
+  license: MIT
+
+repos:
+  - fedora-34
+  - fedora-34-updates
+  - qtile
+
+packages:
+  # qtile / wayland
+  - qtile
+  - slurp
+  - grim
+  - xorg-x11-server-Xwayland
+  - wofi
+  - wl-clipboard
+
+  # shell
+  - alacritty
+  - bat
+  - exa
+  - fish
+  - git
+  - starship
+
+postprocess-script: post.sh
