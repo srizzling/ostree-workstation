@@ -29,3 +29,19 @@ jobs:
           name: repository
           path: /var/tmp/repo.tar.gz
           retention-days: 5
+    
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+  
+      - name: Install Backblaze B2 command-line tool
+        run: |
+          python -m pip install --upgrade pip
+          pip install --quiet --no-cache-dir b2==2.0.2
+
+      - name: Sync to Backblaze B2
+        run: |
+          b2 authorize-account ${{ secrets.B2_APPKEY_ID }} ${{ secrets.B2_APPKEY }}
+          b2 sync --delete --replaceNewer /var/tmp/repo/ b2://${{ secrets.B2_BUCKET }}/
+          b2 clear-account
