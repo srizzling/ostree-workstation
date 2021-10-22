@@ -18,12 +18,14 @@ jobs:
 
       - name: Build OSTree
         run: ./compose.sh
-      
-      # sync
-      - name: Sync tree to backblaze
-        uses: jakejarvis/backblaze-b2-action@master
-        env:
-          SOURCE_DIR: './var/tmp/repo'
-          B2_BUCKET: ${{ secrets.B2_BUCKET }}
-          B2_APPKEY_ID: ${{ secrets.B2_APPKEY_ID }}
-          B2_APPKEY: ${{ secrets.B2_APPKEY }}
+        
+      # upload-artifact@v2 has trouble with tens of thousands of files
+      - name: Create repo tarball
+        run: tar -czf /var/tmp/repo.tar.gz -C /var/tmp/repo .
+
+      - name: Create repository artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: repository
+          path: /var/tmp/repo.tar.gz
+          retention-days: 5
