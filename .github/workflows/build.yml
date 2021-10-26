@@ -9,7 +9,7 @@ jobs:
       options: --privileged --security-opt label:disable
     steps:
       - name: Install dependencies
-        run: dnf install -y rpm-ostree selinux-policy selinux-policy-targeted policycoreutils git python
+        run: dnf install -y rpm-ostree selinux-policy selinux-policy-targeted policycoreutils git
 
       - name: Clone repository
         uses: actions/checkout@v2
@@ -29,16 +29,11 @@ jobs:
           name: repository
           path: /var/tmp/repo.tar.gz
           retention-days: 5
-    
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
   
       - name: Install Backblaze B2 command-line tool
         run: |
-          python -m pip install --upgrade pip
-          pip install --quiet --no-cache-dir b2
+          wget https://github.com/Backblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux -O /usr/local/bin/b2
+          chmod +x /usr/local/bin/b2
 
       - name: Sync to Backblaze B2
         run: |
