@@ -1,9 +1,9 @@
 include: upstream/fedora-common-ostree.yaml
 
-#ref: fedora/33/${basearch}/sway
+ref: srizzling-desktop
 rojig:
-  name: fedora-qtile
-  summary: "Fedora Silverblue Qtile"
+  name: srizzling-desktop
+  summary: "A customized fedora silverblue setup for srizzling using qtile as the window manager"
   license: MIT
 
 repos:
