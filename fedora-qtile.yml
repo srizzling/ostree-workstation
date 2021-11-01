@@ -3,17 +3,32 @@ include: upstream/fedora-common-ostree.yaml
 ref: srizzling-desktop
 rojig:
   name: srizzling-desktop
-  summary: "A customized fedora silverblue setup for srizzling using qtile as the window manager"
+  summary: "A customized fedora silverblue setup for srizzling using sway as the window manager"
   license: MIT
 
 repos:
   - fedora-34
   - fedora-34-updates
-  - qtile
 
 packages:
-  # qtile / wayland
-  - qtile
+  # network
+  - NetworkManager-wifi
+  - NetworkManager-openvpn-gnome
+  - sane-backends
+  - sane-backends-drivers-scanners
+  - iwd
+  - wpa_supplicant
+
+  # sway / wayland
+  - sway
+  - swayidle
+  - swaylock
+  - kanshi
+  - mako
+  - waybar
+  - firefox-wayland
+  - wofi
+  - wl-clipboardi
   - slurp
   - grim
   - xorg-x11-server-Xwayland
@@ -24,8 +39,10 @@ packages:
   - alacritty
   - bat
   - exa
+  - ripgrep
   - fish
   - git
   - starship
+  - emacs
 
 postprocess-script: post.sh
