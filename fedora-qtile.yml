@@ -11,38 +11,122 @@ repos:
   - fedora-34-updates
 
 packages:
-  # network
+# hardware/drivers
+  - kernel
+  - kernel-modules-extra
+  - iwl6000g2a-firmware
+  - iwl7260-firmware
+  - alsa-sof-firmware
   - NetworkManager-wifi
   - NetworkManager-openvpn-gnome
   - sane-backends
   - sane-backends-drivers-scanners
+  - powertop
   - iwd
   - wpa_supplicant
+  - udisks2-lvm2
+  - opensc
+# basic system
+  - acl
+  - attr
+  - basesystem
+  - cryptsetup
+  - dnsmasq
+  - fedora-workstation-backgrounds
+  - filesystem
+  - glibc-langpack-de
+  - glibc-langpack-en
+  - hostname
+  - iproute
+  - kbd
+  - nss-altfiles
+  - pciutils
+  # don't care, but rpm-ostree build fails otherwise
+  - selinux-policy-targeted
+  - sudo
+  - usbutils
+# shell tools and development
+  - bc
+  - gnupg2
+  - fpaste
+  - lsof
+  - man-db
+  - mtr
+  - tree
+  - bzip2
+  - zip
+  - unzip
+  - vim-enhanced
+  - ranger
+  - bash-completion
+  - fish
+  - qemu-system-x86-core
+  - qemu-ui-sdl
+  - qemu-img
+  - openvpn
+  - mutt
+  - nmap-ncat
+  - isync
+  - weechat
+  - duplicity
+  - openssh-server
+  - systemd-container
+  - git
+  - patchutils
+  - make
+  - strace
+  - wget
+  - w3m
+  - cockpit-system
+  - cockpit-ws
+  - syncthing
+  - krb5-workstation
 
-  # sway / wayland
+# desktop plumbing/apps
+  - dejavu-sans-fonts
+  - dejavu-serif-fonts
+  - dejavu-sans-mono-fonts
+  - fontawesome-fonts
+  - google-noto-emoji-color-fonts
+
+  - gvfs-mtp
+  - pulseaudio-utils
+  - alsa-plugins-pulseaudio
+  - gstreamer1-plugins-good
+  - gstreamer1-plugins-ugly
+  - gstreamer1-libav
+  # for wf-recorder
+  - libavdevice
+  - xdg-desktop-portal-gtk
+
+  - pavucontrol
+  - pcmanfm
+  - simple-scan
+  - nm-connection-editor
+  - eog
+  - evince
+  - rhythmbox
+  - gnome-keyring
+  - pinentry-gnome3
+  - lxpolkit
+  - lxterminal
+  - gnome-disk-utility
+  - gtimelog
+  - rofimoji
+
+# sway/wayland desktop
   - sway
   - swayidle
   - swaylock
   - kanshi
   - mako
   - waybar
-  - firefox-wayland
-  - wofi
-  - wl-clipboard
   - slurp
   - grim
   - xorg-x11-server-Xwayland
+  - firefox-wayland
   - wofi
+  - brightnessctl
   - wl-clipboard
-
-  # shell
-  - alacritty
-  - bat
-  - exa
-  - ripgrep
-  - fish
-  - git
-  - starship
-  - emacs
 
 postprocess-script: post.sh
