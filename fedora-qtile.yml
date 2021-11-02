@@ -28,7 +28,7 @@ packages:
   - waybar
   - firefox-wayland
   - wofi
-  - wl-clipboardi
+  - wl-clipboard
   - slurp
   - grim
   - xorg-x11-server-Xwayland
