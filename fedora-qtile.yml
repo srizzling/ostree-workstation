@@ -88,13 +88,6 @@ packages:
   - dejavu-sans-mono-fonts
   - fontawesome-fonts
   - google-noto-emoji-color-fonts
-
-  - gvfs-mtp
-  - pulseaudio-utils
-  - alsa-plugins-pulseaudio
-  - gstreamer1-plugins-good
-  - gstreamer1-plugins-ugly
-  - gstreamer1-libav
   # for wf-recorder
   - libavdevice
   - xdg-desktop-portal-gtk
