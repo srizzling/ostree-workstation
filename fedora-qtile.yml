@@ -56,19 +56,13 @@ packages:
   - bzip2
   - zip
   - unzip
-  - vim-enhanced
+  - ripgrep
+  - emacs
   - ranger
   - bash-completion
   - fish
-  - qemu-system-x86-core
-  - qemu-ui-sdl
-  - qemu-img
-  - openvpn
-  - mutt
   - nmap-ncat
   - isync
-  - weechat
-  - duplicity
   - openssh-server
   - systemd-container
   - git
@@ -77,19 +71,8 @@ packages:
   - strace
   - wget
   - w3m
-  - cockpit-system
-  - cockpit-ws
-  - syncthing
-  - krb5-workstation
-
-# desktop plumbing/apps
-  - dejavu-sans-fonts
-  - dejavu-serif-fonts
-  - dejavu-sans-mono-fonts
-  - fontawesome-fonts
-  - google-noto-emoji-color-fonts
+  
   # for wf-recorder
-  - libavdevice
   - xdg-desktop-portal-gtk
 
   - pavucontrol
@@ -98,7 +81,6 @@ packages:
   - nm-connection-editor
   - eog
   - evince
-  - rhythmbox
   - gnome-keyring
   - pinentry-gnome3
   - lxpolkit
