@@ -1,9 +1,9 @@
 include: upstream/fedora-common-ostree.yaml
 
-ref: srizzling-desktop
+ref: fedora-srizzling
 rojig:
-  name: srizzling-desktop
-  summary: "A customized fedora silverblue setup for srizzling using sway as the window manager"
+  name: fedora-srizzling
+  summary: "Fedora Silverblue Srizzling"
   license: MIT
 
 repos:
@@ -11,97 +11,33 @@ repos:
   - fedora-34-updates
 
 packages:
-# hardware/drivers
-  - kernel
-  - kernel-modules-extra
-  - iwl6000g2a-firmware
-  - iwl7260-firmware
-  - alsa-sof-firmware
-  - NetworkManager-wifi
-  - NetworkManager-openvpn-gnome
-  - sane-backends
-  - sane-backends-drivers-scanners
-  - powertop
+  # hardware
   - iwd
   - wpa_supplicant
-  - udisks2-lvm2
-  - opensc
-# basic system
-  - acl
-  - attr
-  - basesystem
-  - cryptsetup
-  - dnsmasq
-  - fedora-workstation-backgrounds
-  - filesystem
-  - glibc-langpack-de
-  - glibc-langpack-en
-  - hostname
-  - iproute
-  - kbd
-  - nss-altfiles
-  - pciutils
-  # don't care, but rpm-ostree build fails otherwise
-  - selinux-policy-targeted
-  - sudo
-  - usbutils
-# shell tools and development
-  - bc
-  - gnupg2
-  - fpaste
-  - lsof
-  - man-db
-  - mtr
-  - tree
-  - bzip2
-  - zip
-  - unzip
-  - ripgrep
-  - emacs
-  - ranger
-  - bash-completion
-  - fish
-  - nmap-ncat
-  - isync
-  - openssh-server
-  - systemd-container
-  - git
-  - patchutils
-  - make
-  - strace
-  - wget
-  - w3m
-  
-  # for wf-recorder
-  - xdg-desktop-portal-gtk
-
-  - pavucontrol
-  - pcmanfm
-  - simple-scan
+  - NetworkManager-wifi
   - nm-connection-editor
-  - eog
-  - evince
-  - gnome-keyring
-  - pinentry-gnome3
-  - lxpolkit
-  - lxterminal
-  - gnome-disk-utility
-  - gtimelog
-  - rofimoji
 
-# sway/wayland desktop
+  # sway / wayland
   - sway
   - swayidle
   - swaylock
-  - kanshi
   - mako
   - waybar
   - slurp
   - grim
   - xorg-x11-server-Xwayland
-  - firefox-wayland
   - wofi
-  - brightnessctl
   - wl-clipboard
+
+  # shell
+  - alacritty
+  - bat
+  - exa
+  - starship
+  - fd-find
+  - vim
+  - fish
+  - kanshi
+  - emacs
 
 postprocess-script: post.sh
