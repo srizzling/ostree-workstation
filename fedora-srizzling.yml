@@ -39,5 +39,8 @@ packages:
   - fish
   - kanshi
   - emacs
+  - git
+  - ripgrep
+  - find
 
 postprocess-script: post.sh
