@@ -42,6 +42,7 @@ packages:
   - git
   - ripgrep
   - find
-  - util-linux-user 
+  - util-linux-user
+  - grc 
 
 postprocess-script: post.sh
