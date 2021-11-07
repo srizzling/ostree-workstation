@@ -9,6 +9,7 @@ rojig:
 repos:
   - fedora-34
   - fedora-34-updates
+  - font
 
 packages:
   # hardware
@@ -42,6 +43,7 @@ packages:
   - git
   - ripgrep
   - util-linux-user
-  - grc 
+  - grc
+  - font-iosevka
 
 postprocess-script: post.sh

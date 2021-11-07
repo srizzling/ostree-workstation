@@ -1,0 +1,10 @@
+[copr:copr.fedorainfracloud.org:peterwu:iosevka]
+name=Copr repo for iosevka owned by peterwu
+baseurl=https://download.copr.fedorainfracloud.org/results/peterwu/iosevka/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/peterwu/iosevka/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
