@@ -29,6 +29,7 @@ packages:
   - xorg-x11-server-Xwayland
   - wofi
   - wl-clipboard
+  - kanshi
 
   # shell
   - alacritty
@@ -38,12 +39,14 @@ packages:
   - fd-find
   - vim
   - fish
-  - kanshi
-  - emacs
   - git
   - ripgrep
   - util-linux-user
   - grc
-  - font-iosevka
+
+  # fonts
+  - iosevka-fonts
+  - iosevka-term-fonts
+  - iosevka-fixed-fonts
 
 postprocess-script: post.sh
