@@ -9,7 +9,7 @@ rojig:
 repos:
   - fedora-34
   - fedora-34-updates
-  - font
+  - copr:copr.fedorainfracloud.org:peterwu:iosevka
 
 packages:
   # hardware
